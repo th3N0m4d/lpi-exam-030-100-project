@@ -13,19 +13,6 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.locals({
-  getLabel: function ({ info }) {
-    switch (info) {
-      case "New":
-        return "block2-labelnew";
-      case "Sale":
-        return "block2-labelsale";
-      default:
-        return "";
-    }
-  },
-});
-
 // middleware setup
 app.use(logger("dev"));
 app.use(express.json());
