@@ -7,8 +7,12 @@ const ejsLayouts = require("express-ejs-layouts");
 
 const indexRouter = require("./routes/index");
 const productsRouter = require("./routes/products");
+const dbConfig = require("./db/config");
 
 const app = express();
+
+/**@todo better turn this into an ExpressJs Middleware */
+dbConfig.init();
 
 // view engine setup
 app.use(ejsLayouts);
